@@ -2,14 +2,16 @@ import React from "react";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom"
 
+import { Utilities } from "../../utilities/utilities";
+
 class RedactorRow extends React.Component {
   state = {
-    redactorEnabled: false
+    redactorEnabled: false,
   };
 
   handleEnableRedactor = () => {
-    this.setState({
-      redactorEnabled: !this.state.redactorEnabled,
+    this.setState({ redactorEnabled: !this.state.redactorEnabled }, () => {
+      this.props.handleSetRedactEnabled(this.props.redactor, this.state.redactorEnabled);
     });
   }
 

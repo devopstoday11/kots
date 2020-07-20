@@ -71,7 +71,6 @@ class EditRedactor extends Component {
     this.setState({ editingRedactor: true, editingErrMsg: "" });
 
     const payload = {
-      slug: slug,
       enabled: enabled,
       redactor: yaml
     }
@@ -287,7 +286,7 @@ spec:
           </div>
           <div className="flex u-marginTop--20 justifyContent--spaceBetween">
             <div className="flex">
-              <Link to="/redactors" className="btn secondary"> Cancel </Link>
+              <Link to={`/app/${this.props.appSlug}/troubleshoot/redactors`} className="btn secondary"> Cancel </Link>
             </div>
             <div className="flex alignItems--center">
               {createConfirm || editConfirm &&
